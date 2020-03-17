@@ -1,26 +1,14 @@
 "use strict";
-var Sorter = /** @class */ (function () {
-    function Sorter(collection) {
-        this.collection = collection;
-    }
-    Sorter.prototype.sort = function () {
-        var length = this.collection.length;
-        for (var i = 0; i < length; i++) {
-            for (var j = 0; j < length - 1 - i; j++) {
-                //if collection is an array of numbers
-                if (this.collection instanceof Array) {
-                    if (this.collection[j] > this.collection[j + 1]) {
-                        var leftHand = this.collection[j];
-                        this.collection[j] = this.collection[j + 1];
-                        this.collection[j + 1] = leftHand;
-                    }
-                }
-                //if collection is an array of strings
-            }
-        }
-    };
-    return Sorter;
-}());
-var sorter = new Sorter([10, 3, -5, 0]);
+Object.defineProperty(exports, "__esModule", { value: true });
+var Sorter_1 = require("./Sorter");
+var LinkedListColllection_1 = require("./LinkedListColllection");
+//const numbersCollection = new NumbersCollection([10, 3, -5, 0]);
+//const charactersCollection = new CharactersCollection("asdfefasdfmzxcm");
+var linkedList = new LinkedListColllection_1.LinkedList();
+linkedList.add(500);
+linkedList.add(-10);
+linkedList.add(-3);
+linkedList.add(4);
+var sorter = new Sorter_1.Sorter(linkedList);
 sorter.sort();
-console.log(sorter.collection);
+linkedList.print();
